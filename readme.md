@@ -59,15 +59,10 @@ Software yang diperlukan untuk menjalankan aplikasi ini adalah
 ## Screenshot Halaman Admin
 <p align='Left' valign='top'>
   <span>
-		<img src='https://github.com/DanyAdhi/Aplikasi-Laundry-Codeigniter/blob/master/screenshot/admin%201.png'  width=400 />
-		<img src='https://github.com/DanyAdhi/Aplikasi-Laundry-Codeigniter/blob/master/screenshot/admin%202.png'  width=400 />
-		<img src='https://github.com/DanyAdhi/Aplikasi-Laundry-Codeigniter/blob/master/screenshot/admin%203.png'  width=400 />
-	  <img src='https://github.com/DanyAdhi/Aplikasi-Laundry-Codeigniter/blob/master/screenshot/admin%204.png'  width=400 />
-		<img src='https://github.com/DanyAdhi/Aplikasi-Laundry-Codeigniter/blob/master/screenshot/admin%205.png'  width=400 />
-		<img src='https://github.com/DanyAdhi/Aplikasi-Laundry-Codeigniter/blob/master/screenshot/admin%206.png'  width=400 />
-		<img src='https://github.com/DanyAdhi/Aplikasi-Laundry-Codeigniter/blob/master/screenshot/admin%207.png'  width=400 />
-		<img src='https://github.com/DanyAdhi/Aplikasi-Laundry-Codeigniter/blob/master/screenshot/admin%208.png'  width=400 />
-		<img src='https://github.com/DanyAdhi/Aplikasi-Laundry-Codeigniter/blob/master/screenshot/admin%209.png'  width=400 />
+		<img src='https://github.com/DanyAdhi/Company-Profile-Laravel/blob/master/ScreenShot/admin-dashboard.png'  width=400 />
+		<img src='https://github.com/DanyAdhi/Company-Profile-Laravel/blob/master/ScreenShot/admin-category.png'  width=400 />
+		<img src='https://github.com/DanyAdhi/Company-Profile-Laravel/blob/master/ScreenShot/admin-articles.png'  width=400 />
+	    <img src='https://github.com/DanyAdhi/Company-Profile-Laravel/blob/master/ScreenShot/admin-about.png'  width=400 />
   </span>
 </p>
 
@@ -75,15 +70,21 @@ Software yang diperlukan untuk menjalankan aplikasi ini adalah
 <br />
 
 ## Screenshot Halaman User
-<p><img src='https://github.com/DanyAdhi/Aplikasi-Laundry-Codeigniter/blob/master/screenshot/user%201.jpg'  width=400 /></p>
-<p><img src='https://github.com/DanyAdhi/Aplikasi-Laundry-Codeigniter/blob/master/screenshot/user%202.png'  width=400 /></p>
 <p align='Left' valign='top'>
-<span>
-	<img src='https://github.com/DanyAdhi/Aplikasi-Laundry-Codeigniter/blob/master/screenshot/user%203.png'  width=400 />
-	<img src='https://github.com/DanyAdhi/Aplikasi-Laundry-Codeigniter/blob/master/screenshot/user%204.png'  width=400 />
-	<img src='https://github.com/DanyAdhi/Aplikasi-Laundry-Codeigniter/blob/master/screenshot/user%205.png'  width=400 />
-  </span>
+    <span>
+        <img src='https://github.com/DanyAdhi/Company-Profile-Laravel/blob/master/ScreenShot/user-home.jpg'  width=400 />
+        <img src='https://github.com/DanyAdhi/Company-Profile-Laravel/blob/master/ScreenShot/user-articles.png'  width=400 />
+    </span>
 </p>
+
+<p align='Left' valign='top'>
+    <span>
+        <img src='https://github.com/DanyAdhi/Company-Profile-Laravel/blob/master/ScreenShot/user-destinations.jpg'  width=400 />
+        <img src='https://github.com/DanyAdhi/Company-Profile-Laravel/blob/master/ScreenShot/user-contact.png'  width=400 />
+    </span>
+</p>
+
+
 
 <br />
 <br />
