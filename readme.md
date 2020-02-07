@@ -1,72 +1,92 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+<h1 align="center">Simple Inventori RestApi with Golang And Docker</h1>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
+<div align="center">
+  <a href="#">
+    <img src="https://img.shields.io/badge/Laravel-6-red.svg?style=flat-square" alt="laravel">
+  </a>
+  <a href="#">
+    <img src="https://img.shields.io/badge/MySQL-.-orange.svg?style=flat-square" alt="mysql">
+  </a>
+  <a href="#">
+    <img src="https://img.shields.io/badge/Bootstrap-4-blue.svg?style=flat-square" alt="bootstrap">
+  </a>
+  <a href="#">
+    <img src="https://img.shields.io/badge/%20-Regna%20Template%202-coral.svg" alt="regna">
+  </a>
+  <a href="#">
+    <img src="https://img.shields.io/badge/%20-ElaAdmin%202-green.svg" alt="ela-admin">
+  </a>
+</div>
+
+
+
+## Pengantar
+&emsp; &emsp; Ini adalah website company profile yang saya buat menggunakan Framework Laravel 6 untuk backend-nya dan framework bootstrap 4 untuk tampilannya. <br />
+&emsp; &emsp; Sistem ini berfungsi untuk ajang promosi usaha Agent Travel yang kita punya, dapat juga digunakan untuk menulis blog atau artikel-artikel seputar travelling dan membagikannya di website ini, selain itu kita juga bisa menampilkan destinasi-destinasi wisata yang dapat dikunjungi dengan jasa yang kita punya sehingga pengunjung bisa melihat dan memilih sendiri destinasi yang ingin dikunjungi.<br />
+	
+	
+## Fitur
+Fitur yang tersedia di website ini adalah
+1. Crud data Category Artikel 
+2. Crud data Artikel
+3. Crud data Destinasi Wisata
+4. Edit data About
+5. User dapat mencari Artikel berdasarkan judul atau kategory
+6. User dapat melihat dan mencari destinasi-destinasi yang disediakan
+
+## Kebutuhan
+Software yang diperlukan untuk menjalankan aplikasi ini adalah
+1. [Xampp](https://www.apachefriends.org/)
+2. Web Browser (Mozilla, Chrome, Opera, dll)
+3. Composer
+
+## Cara Instalasi
+1. Pastikan kamu sudah mendownload repositori ini.
+2. Ekstrak file yang sudah didownload.
+3. Letakkan repositori di dalam folder htdocts xampp kamu.
+4. Buka aplikasi xampp dan klik start pada apache dan mysql.
+5. cp .env.example .env
+6. File env dan sesuaikan dengan sistem kita
+7. Buka CMD dan arahkan ke direktori ini.
+8. Ketik "composer install" dan tekan enter
+9. ketik "php artisan key:generate" dan tekan enter
+10. ketik "php artisan migrate" dan tekan enter
+11. ketik "php artisan db:seed" dan tekan enter
+12. ketik "php artisan serve" dan tekan enter
+13. Buka web browser dan tulis 'http://127.0.0.1:8000/' di form url lalu tekan enter.
+
+
+## Screenshot Halaman Admin
+<p align='Left' valign='top'>
+  <span>
+		<img src='https://github.com/DanyAdhi/Aplikasi-Laundry-Codeigniter/blob/master/screenshot/admin%201.png'  width=400 />
+		<img src='https://github.com/DanyAdhi/Aplikasi-Laundry-Codeigniter/blob/master/screenshot/admin%202.png'  width=400 />
+		<img src='https://github.com/DanyAdhi/Aplikasi-Laundry-Codeigniter/blob/master/screenshot/admin%203.png'  width=400 />
+	  <img src='https://github.com/DanyAdhi/Aplikasi-Laundry-Codeigniter/blob/master/screenshot/admin%204.png'  width=400 />
+		<img src='https://github.com/DanyAdhi/Aplikasi-Laundry-Codeigniter/blob/master/screenshot/admin%205.png'  width=400 />
+		<img src='https://github.com/DanyAdhi/Aplikasi-Laundry-Codeigniter/blob/master/screenshot/admin%206.png'  width=400 />
+		<img src='https://github.com/DanyAdhi/Aplikasi-Laundry-Codeigniter/blob/master/screenshot/admin%207.png'  width=400 />
+		<img src='https://github.com/DanyAdhi/Aplikasi-Laundry-Codeigniter/blob/master/screenshot/admin%208.png'  width=400 />
+		<img src='https://github.com/DanyAdhi/Aplikasi-Laundry-Codeigniter/blob/master/screenshot/admin%209.png'  width=400 />
+  </span>
 </p>
 
-## About Laravel
+<br />
+<br />
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Screenshot Halaman User
+<p><img src='https://github.com/DanyAdhi/Aplikasi-Laundry-Codeigniter/blob/master/screenshot/user%201.jpg'  width=400 /></p>
+<p><img src='https://github.com/DanyAdhi/Aplikasi-Laundry-Codeigniter/blob/master/screenshot/user%202.png'  width=400 /></p>
+<p align='Left' valign='top'>
+<span>
+	<img src='https://github.com/DanyAdhi/Aplikasi-Laundry-Codeigniter/blob/master/screenshot/user%203.png'  width=400 />
+	<img src='https://github.com/DanyAdhi/Aplikasi-Laundry-Codeigniter/blob/master/screenshot/user%204.png'  width=400 />
+	<img src='https://github.com/DanyAdhi/Aplikasi-Laundry-Codeigniter/blob/master/screenshot/user%205.png'  width=400 />
+  </span>
+</p>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+<br />
+<br />
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Kontak
+danyadhi4149@gmail.com
