@@ -41,7 +41,6 @@ Route::prefix('admin')->group(function(){
   Route::get('/abouts', 'AboutController@index')->name('abouts.index')->middleware('auth');
   Route::get('/abouts/{about}/edit', 'AboutController@edit')->name('abouts.edit')->middleware('auth');
   Route::put('/abouts/{about}', 'AboutController@update')->name('abouts.update')->middleware('auth');
-  // Route::resource('abouts', 'AboutController')->middleware('auth');
     
     
 });

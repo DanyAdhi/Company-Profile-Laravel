@@ -8,141 +8,141 @@ use File;
 
 class DestinationController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index(Request $request)
-    {
-        $status     = $request->get('status');
-        $keyword    = $request->get('keyword') ? $request->get('keyword') : '';
-        $category   = $request->get('c') ? $request->get('c') : '';
+  /**
+   * Display a listing of the resource.
+   *
+   * @return \Illuminate\Http\Response
+   */
+  public function index(Request $request)
+  {
+    $status     = $request->get('status');
+    $keyword    = $request->get('keyword') ? $request->get('keyword') : '';
+    $category   = $request->get('c') ? $request->get('c') : '';
 
-        if($status){
-            $destinations = Destination::where('status', strtoupper($status))
-                                        ->where('title', 'LIKE', "%$keyword%")
-                                        ->orderBy('created_at', 'desc')
-                                        ->paginate(10);
-
-        }else{
-            $destinations = Destination::where('title', 'LIKE', "%$keyword%")
+    if($status){
+      $destinations = Destination::where('status', strtoupper($status))
+                                    ->where('title', 'LIKE', "%$keyword%")
                                     ->orderBy('created_at', 'desc')
                                     ->paginate(10);
-        }
 
-        return view('Destinations.index', compact('destinations'));
+    }else{
+      $destinations = Destination::where('title', 'LIKE', "%$keyword%")
+                                ->orderBy('created_at', 'desc')
+                                ->paginate(10);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        return view('destinations.create');
-    }
+    return view('destinations.index', compact('destinations'));
+  }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        \Validator::make($request->all(),[
-            'title'      => 'required|min:2|max:200',
-            'image'      => 'required',
-        ])->validate();
+  /**
+   * Show the form for creating a new resource.
+   *
+   * @return \Illuminate\Http\Response
+   */
+  public function create()
+  {
+      return view('destinations.create');
+  }
 
-        $new_Destination               = new \App\Destination;
-        $new_Destination->title        = $request->get('title');
-        $new_Destination->slug         = \Str::slug($request->get('title'), '-');
-        $new_Destination->content      = $request->get('content');
-        $new_Destination->create_by    = \Auth::user()->id;
-        $new_Destination->status       = $request->get('save_action');
+  /**
+   * Store a newly created resource in storage.
+   *
+   * @param  \Illuminate\Http\Request  $request
+   * @return \Illuminate\Http\Response
+   */
+  public function store(Request $request)
+  {
+      \Validator::make($request->all(),[
+          'title'      => 'required|min:2|max:200',
+          'image'      => 'required',
+      ])->validate();
 
-        if($request->file('image')){
-            $nama_file = time()."_".$request->file('image')->getClientOriginalName();
-            $image_path = $request->file('image')->move('destinations_image', $nama_file);
-            $new_Destination->image = $nama_file;
-        }
+      $new_Destination               = new \App\Destination;
+      $new_Destination->title        = $request->get('title');
+      $new_Destination->slug         = \Str::slug($request->get('title'), '-');
+      $new_Destination->content      = $request->get('content');
+      $new_Destination->create_by    = \Auth::user()->id;
+      $new_Destination->status       = $request->get('save_action');
 
-        
-        $new_Destination->save();
+      if($request->file('image')){
+          $nama_file = time()."_".$request->file('image')->getClientOriginalName();
+          $image_path = $request->file('image')->move('destinations_image', $nama_file);
+          $new_Destination->image = $nama_file;
+      }
 
-        return redirect()->route('destinations.index')->with('success', 'Destination successfully created');
-    }
+      
+      $new_Destination->save();
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
+      return redirect()->route('destinations.index')->with('success', 'Destination successfully created');
+  }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        $destination = Destination::findOrFail($id);
-        return view('destinations.edit', compact('destination'));
-    }
+  /**
+   * Display the specified resource.
+   *
+   * @param  int  $id
+   * @return \Illuminate\Http\Response
+   */
+  public function show($id)
+  {
+      //
+  }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        $destination = Destination::findOrFail($id);
+  /**
+   * Show the form for editing the specified resource.
+   *
+   * @param  int  $id
+   * @return \Illuminate\Http\Response
+   */
+  public function edit($id)
+  {
+      $destination = Destination::findOrFail($id);
+      return view('destinations.edit', compact('destination'));
+  }
 
-        $destination->title        = $request->get('title');
-        $destination->slug         = \Str::slug($request->get('title'), '-');
-        $destination->content      = $request->get('content');
-        $destination->status       = $request->get('save_action');
-        $destination->update_by    = \Auth::user()->id;
+  /**
+   * Update the specified resource in storage.
+   *
+   * @param  \Illuminate\Http\Request  $request
+   * @param  int  $id
+   * @return \Illuminate\Http\Response
+   */
+  public function update(Request $request, $id)
+  {
+      $destination = Destination::findOrFail($id);
 
-        if($request->file('image')){   
-            if($destination->image){
-                File::delete('destinations_image/'.$destination->image);
-            }
-            $nama_file = time()."_".$request->file('image')->getClientOriginalName();
-            $new_image = $request->file('image')->move('destinations_image', $nama_file);
-            $destination->image = $nama_file;
-        }
+      $destination->title        = $request->get('title');
+      $destination->slug         = \Str::slug($request->get('title'), '-');
+      $destination->content      = $request->get('content');
+      $destination->status       = $request->get('save_action');
+      $destination->update_by    = \Auth::user()->id;
 
-        $destination->save();
-        return redirect()->route('destinations.index')->with('success', 'Destination successfully update.');
-    }
+      if($request->file('image')){   
+          if($destination->image){
+              File::delete('destinations_image/'.$destination->image);
+          }
+          $nama_file = time()."_".$request->file('image')->getClientOriginalName();
+          $new_image = $request->file('image')->move('destinations_image', $nama_file);
+          $destination->image = $nama_file;
+      }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        $destination = Destination::findOrFail($id);
-        if($destination->image){
-            File::delete('destinations_image/'.$destination->image);
-        }
-        $destination->forceDelete();
+      $destination->save();
+      return redirect()->route('destinations.index')->with('success', 'Destination successfully update.');
+  }
 
-        return redirect()->route('destinations.index')->with('success', 'Destination successfully deleted.');
-    }
+  /**
+   * Remove the specified resource from storage.
+   *
+   * @param  int  $id
+   * @return \Illuminate\Http\Response
+   */
+  public function destroy($id)
+  {
+      $destination = Destination::findOrFail($id);
+      if($destination->image){
+          File::delete('destinations_image/'.$destination->image);
+      }
+      $destination->forceDelete();
+
+      return redirect()->route('destinations.index')->with('success', 'Destination successfully deleted.');
+  }
 }
